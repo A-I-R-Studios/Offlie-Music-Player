@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<MusicFiles> tempAudioList = new ArrayList<>();
         Uri uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
         String [] projection = {
-                MediaStore.Audio.Media.ALBUM,
+                MediaStore.Audio.Media.ALBUM_ID,
                 MediaStore.Audio.Media.TITLE,
                 MediaStore.Audio.Media.DURATION,
                 MediaStore.Audio.Media.DATA, //Path

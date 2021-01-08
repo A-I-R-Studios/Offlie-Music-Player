@@ -8,11 +8,12 @@
     android:layout_marginTop="5dp">
 
     <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:id="@+id/music_img"
-        android:background="@mipmap/ic_launcher_round"
-        android:padding="5dp"/>
+        android:scaleType="centerCrop"
+        android:background="@drawable/sword"
+        />
     <TextView
         android:id="@+id/music_file_name"
         android:layout_width="wrap_content"

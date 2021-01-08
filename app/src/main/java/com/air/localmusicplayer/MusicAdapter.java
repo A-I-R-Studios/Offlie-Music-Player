@@ -1,5 +1,6 @@
 package com.air.localmusicplayer;
 
+import android.content.ContentUris;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,13 +40,25 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.file_name.setText(mFiles.get(position).getTitle());
-//        byte[] image = getAlbumArt(mFiles.get(position).getPath());
 
-//        if (image != null){
-//            Glide.with(mContext).asBitmap().load(image).placeholder(R.drawable.ic_launcher_background).into(holder.album_art);
-//        }else {
-//            Glide.with(mContext).load(R.drawable.ic_launcher_background).into(holder.album_art);
-//        }
+        try{
+//        MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+//        retriever.setDataSource(mFiles.get(position).getPath());
+//        byte[] art = retriever.getEmbeddedPicture();
+//        retriever.release();
+            final Uri sArtworkUri = Uri
+                    .parse("content://media/external/audio/albumart");
+
+            Uri uri = ContentUris.withAppendedId(sArtworkUri,
+                   Long.parseLong(mFiles.get(position).getAlbum()));
+        if (uri != null){
+            Glide.with(mContext).load(uri).placeholder(R.drawable.sword).into(holder.album_art);
+        }else {
+            Glide.with(mContext).load(R.drawable.sword).into(holder.album_art);
+        }
+        }catch (Exception e){
+            Toast.makeText(mContext, "Error"+e, Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -65,12 +79,4 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MyViewHolder
         }
     }
 
-//    public byte[] getAlbumArt(String uri){
-//        MediaMetadataRetriever retriever = new MediaMetadataRetriever();
-//        retriever.setDataSource(uri);
-//        byte[] art = retriever.getEmbeddedPicture();
-//        retriever.release();
-//        return art;
-//
-//    }
 }
