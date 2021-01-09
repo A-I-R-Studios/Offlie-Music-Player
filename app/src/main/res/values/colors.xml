@@ -11,4 +11,7 @@
     <color name="primaryDark">#FFA000</color>
     <color name="Accent">#009688</color>
     <color name="dark">#494949</color>
+    <color name="Cream">#E8E7E7</color>
+    <color name="pink">#fc6c85</color>
+    <color name="light_pink">#ffb6c1</color>
 </resources>

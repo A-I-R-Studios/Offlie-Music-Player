@@ -64,11 +64,11 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "unable to change status bar colour", Toast.LENGTH_SHORT).show();
                     }
                 }else {
-                    tabLayout.setBackgroundColor(ContextCompat.getColor(MainActivity.this,R.color.primary));
-                    toolbar.setBackgroundColor(ContextCompat.getColor(MainActivity.this,R.color.primary));
+                    tabLayout.setBackgroundColor(ContextCompat.getColor(MainActivity.this,R.color.pink));
+                    toolbar.setBackgroundColor(ContextCompat.getColor(MainActivity.this,R.color.pink));
                     toolbar.setTitle("Songs");
                     if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-                        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.primary));
+                        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.pink));
                     }else {
                         Toast.makeText(MainActivity.this, "unable to change status bar colour", Toast.LENGTH_SHORT).show();
                     }
@@ -94,11 +94,11 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "unable to change status bar colour", Toast.LENGTH_SHORT).show();
                     }
                 }else {
-                    tabLayout.setBackgroundColor(ContextCompat.getColor(MainActivity.this,R.color.primary));
-                    toolbar.setBackgroundColor(ContextCompat.getColor(MainActivity.this,R.color.primary));
+                    tabLayout.setBackgroundColor(ContextCompat.getColor(MainActivity.this,R.color.pink));
+                    toolbar.setBackgroundColor(ContextCompat.getColor(MainActivity.this,R.color.pink));
                     toolbar.setTitle("Songs");
                     if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-                        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.primary));
+                        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.pink));
                     }else {
                         Toast.makeText(MainActivity.this, "unable to change status bar colour", Toast.LENGTH_SHORT).show();
                     }
@@ -140,21 +140,23 @@ public class MainActivity extends AppCompatActivity {
                 MediaStore.Audio.Media.TITLE,
                 MediaStore.Audio.Media.DURATION,
                 MediaStore.Audio.Media.DATA, //Path
-                MediaStore.Audio.Media.ARTIST
+                MediaStore.Audio.Media.ARTIST,
+                MediaStore.Audio.Media.ALBUM
         };
         Cursor cursor = context.getContentResolver().query(uri,projection,null,null,null);
         if (cursor != null){
             while (cursor.moveToNext()){
-                String album = cursor.getString(0);
+                String album_ID = cursor.getString(0);
                 String title = cursor.getString(1);
                 String duration = cursor.getString(2);
                 String path = cursor.getString(3);
                 String artist = cursor.getString(4);
+                String album = cursor.getString(5);
 
-                MusicFiles musicFiles = new MusicFiles(path,title,artist,album,duration);
+                MusicFiles musicFiles = new MusicFiles(path,title,artist,album_ID,duration,album);
 
                 //take log for check files
-                Log.e("path: "+path,"album :"+album);
+//                Log.e("path: "+path,"album :"+album);
                 tempAudioList.add(musicFiles);
             }
             cursor.close();

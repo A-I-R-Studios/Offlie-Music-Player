@@ -1,31 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/audio_item"
-    android:background="#2E2D2D"
-    android:layout_marginTop="5dp">
+    android:background="@color/white"
+    android:layout_marginBottom="1dp">
 
-    <ImageView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:id="@+id/music_img"
-        android:scaleType="centerCrop"
-        android:background="@drawable/sword"
-        />
-    <TextView
-        android:id="@+id/music_file_name"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="file_name"
-        android:layout_toEndOf="@+id/music_img"
-        android:layout_marginStart="10dp"
-        android:layout_centerVertical="true"
-        android:textColor="@color/white"/>
+        app:cardCornerRadius="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="2dp">
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:id="@+id/music_img"
+            android:scaleType="centerCrop"
+            android:background="@drawable/backmp3"/>
+    </androidx.cardview.widget.CardView>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/item_card"
+        android:layout_centerVertical="true">
+        <TextView
+            android:id="@+id/music_file_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black"
+            android:singleLine="true"
+            android:textSize="15sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/music_file_name"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="10dp">
+            <TextView
+                android:id="@+id/music_file_artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UnKnown Artist"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:singleLine="true"
+                android:maxLength="20"
+                android:textSize="12sp"/>
 
-
-
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  |  "
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:singleLine="true"
+                android:textSize="17sp"/>
+            <TextView
+                android:id="@+id/music_file_album"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UnKnown Album"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:singleLine="true"
+                android:textSize="12sp"/>
+        </LinearLayout>
+    </RelativeLayout>
 </RelativeLayout>

@@ -1,17 +1,26 @@
 package com.air.localmusicplayer;
 
 public class MusicFiles {
-    private String path ,title , artist ,album ,duration;
+    private String path ,title , artist ,album_ID ,duration,album;
 
-    public MusicFiles(String path, String title, String artist, String album, String duration) {
+    public MusicFiles(String path, String title, String artist, String album_ID, String duration,String album) {
         this.path = path;
         this.title = title;
         this.artist = artist;
-        this.album = album;
+        this.album_ID = album_ID;
         this.duration = duration;
+        this.album = album;
     }
 
     public MusicFiles() {
+    }
+
+    public String getAlbum() {
+        return album;
+    }
+
+    public void setAlbum(String album) {
+        this.album = album;
     }
 
     public String getPath() {
@@ -38,12 +47,12 @@ public class MusicFiles {
         this.artist = artist;
     }
 
-    public String getAlbum() {
-        return album;
+    public String getAlbum_ID() {
+        return album_ID;
     }
 
-    public void setAlbum(String album) {
-        this.album = album;
+    public void setAlbum_ID(String album_ID) {
+        this.album_ID = album_ID;
     }
 
     public String getDuration() {

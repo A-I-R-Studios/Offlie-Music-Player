@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="@color/primary"
+        android:background="@color/pink"
         app:popupTheme="@style/Theme.MaterialComponents.Light"
         android:theme="@style/Theme.MaterialComponents.DayNight"/>
 
@@ -19,7 +19,7 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary"
+        android:background="@color/pink"
         app:tabSelectedTextColor="@color/white"
         app:tabTextColor="#333232"
         app:tabIndicatorColor="@color/white"
