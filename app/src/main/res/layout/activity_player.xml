@@ -45,16 +45,15 @@
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="wrap_content"
         android:id="@+id/card"
-        android:layout_below="@+id/layout_top_button">
+        android:layout_below="@+id/layout_top_button"
+        android:layout_marginTop="40dp">
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
             app:cardCornerRadius="25dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
             android:elevation="20dp">
 
             <ImageView

@@ -26,7 +26,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/item_card"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/menu_More">
         <TextView
             android:id="@+id/music_file_name"
             android:layout_width="wrap_content"
@@ -37,7 +38,8 @@
             android:layout_marginLeft="10dp"
             android:textColor="@color/black"
             android:singleLine="true"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,5 +78,14 @@
                 android:singleLine="true"
                 android:textSize="12sp"/>
         </LinearLayout>
+
     </RelativeLayout>
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/menu_More"
+        android:scaleType="centerCrop"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/ic_baseline_more"/>
 </RelativeLayout>
